@@ -60,7 +60,67 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b7b71a5e-d8f0-4d79-a573-8e36f75539df
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aad6bbe3-56f2-4611-91e0-15f79788457f
+    m_ActionName: Player/Accelerate[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f07decb-092e-4c88-9d58-09d341a62228
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f63a5e67-251b-4f31-b6f7-2fd4312b6840
+    m_ActionName: Player/Crouch[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 441f61cd-eb50-4edb-9057-81b806609ad3
+    m_ActionName: Player/Trick[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 62beb190-f600-4d33-8648-aa7e6d17a18b
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d9a7846-596a-4c94-a984-08a1aad960f2
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e0a4ad13-1cd0-4b0f-988d-d38873834cdb
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a33e6ac-6ae9-4a0a-988e-8039cb0af180
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da6cf80d-6571-46b6-9bf2-b6b8ff61ada5
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88905634-eb1e-4ec4-a04d-f75ba4d0c921
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c693a018-849c-476b-a8e2-4db08b4a82ea
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ee9d9b6-dc7e-44df-b306-8f9e2f2ede60
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35d9df71-9c57-4dca-85d8-7dee425f1523
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef801d13-ec4d-4ca7-986e-3a27844a09e9
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -104,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4a975118d56c474ea62aabf266cb32d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 40
+  _baseSpeed: 25
   _jumpForce: 6
   _gravityMultiplier: 0.2
 --- !u!1 &9136065187445607971
