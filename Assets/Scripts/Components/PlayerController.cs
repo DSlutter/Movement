@@ -3,35 +3,41 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController _characterController;
-
     [SerializeField]
     private float _moveSpeed;
 
     [SerializeField]
     private float _jumpPower;
 
+    [SerializeField]
+    private float _gravity;
+
+
+    private CharacterController _characterController;
+
     private Vector2 _playerMove;
 
-    private Vector3 _direction;
+    private Vector3 _direction = new();
 
     private float _velocity;
 
-    private float _gravity = -5f;
 
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
+
     private void FixedUpdate()
     {
-        Move();
+        ApplyGravity();
+        ApplyMovement();
     }
 
     private void OnMove(InputValue inputValue)
     {
         _playerMove = inputValue.Get<Vector2>();
+        Move();
     }
 
     private void OnJump()
@@ -48,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if( _characterController.isGrounded && _velocity <= 0f) 
         {
-            _velocity = 1f;
+            _velocity = -1f;
         }
         else
         {
@@ -58,9 +64,14 @@ public class PlayerController : MonoBehaviour
         _direction.y = _velocity;
     }
 
+    private void ApplyMovement()
+    {
+        _characterController.Move(_direction * _moveSpeed * Time.deltaTime);
+    }
+    
     private void Move()
     {
-        Run();
+        _direction = new Vector3(_playerMove.x, 0.0f, _playerMove.y);
     }
 
     private void Jump()
@@ -69,33 +80,4 @@ public class PlayerController : MonoBehaviour
 
         _velocity += _jumpPower;
     }
-
-    private void Run()
-    {
-        //// Calculate the movement direction based on input
-        //var moveDirection = new Vector3(_playerMove.x, 0f, _playerMove.y);
-
-        //// Convert the movement direction from local to world space
-        //moveDirection = transform.TransformDirection(moveDirection);
-
-        //// Apply movement speed
-        //moveDirection *= _moveSpeed * Time.deltaTime;
-
-        //// Move the character
-        //_characterController.Move(moveDirection);
-
-        // Calculate movement direction based on input
-        var movementDirection = new Vector3(_playerMove.x, 0.0f, _playerMove.y).normalized;
-
-        // Move the character based on input and speed
-        _characterController.Move(movementDirection * _moveSpeed * Time.deltaTime);
-    }
-
-    //private void Strafe()
-    //{
-    //    var movement = new Vector3(_playerMove.y, 0f, -_playerMove.x); // Adjusted for left-right movement
-    //    movement = transform.TransformDirection(movement * _moveSpeed * Time.deltaTime);
-    //    Debug.Log(movement);
-    //    _characterController.Move(movement);
-    //}
 }
