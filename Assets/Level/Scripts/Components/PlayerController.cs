@@ -10,7 +10,11 @@ namespace Components
         {
             var movement = inputValue.Get<Vector2>();
 
-            //Debug.Log($"Move: {movement}");
+            if (!IsGrounded)
+            {
+                MoveAirborne(movement);
+                return;
+            }
 
             Move(movement);
         }
@@ -41,28 +45,28 @@ namespace Components
             Jump();
         }
 
+        private void OnJumpFinish()
+        {
+            IsJumping = false;
+        }
+
         private void OnCrouch()
         {
             if (!IsGrounded)
             {
+                Debug.Log("FastFall");
+                FastFall();
                 return;
             }
 
             Debug.Log("Crouch");
 
-            Jump();
+            Crouch();
         }
 
         private void OnTrick()
         {
-            if (!IsGrounded)
-            {
-                return;
-            }
-
             Debug.Log("Trick");
-
-            Jump();
         }
     }
 }

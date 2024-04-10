@@ -24,13 +24,31 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "AccelerateFinish",
+                    "type": "Button",
+                    "id": "996d5b62-55c0-4d36-bd52-9523f38ec75a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "0f07decb-092e-4c88-9d58-09d341a62228",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "JumpFinish",
+                    "type": "Button",
+                    "id": "951151ac-37af-4585-8b15-87d6a71891ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Crouch",
@@ -48,15 +66,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "AccelerateFinish",
-                    "type": "Button",
-                    "id": "996d5b62-55c0-4d36-bd52-9523f38ec75a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -234,6 +243,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7d14b6f-a58c-4235-b292-8d44b7313af8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JumpFinish",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
